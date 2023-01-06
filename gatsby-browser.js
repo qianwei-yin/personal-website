@@ -6,5 +6,5 @@ const Layout = require("./src/components/Layout").default
 
 // element is every page
 exports.wrapPageElement = ({ element, props }) => {
-  return <Layout>{element}</Layout>
+  return <Layout {...props}>{element}</Layout>
 }

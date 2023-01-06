@@ -1,37 +1,27 @@
 import React from "react"
-import {
-  FaFacebookSquare,
-  FaLinkedin,
-  FaDribbbleSquare,
-  FaBehanceSquare,
-  FaTwitterSquare,
-} from "react-icons/fa"
+import { FaLinkedin, FaSpotify } from "react-icons/fa"
+import { SiLeetcode, SiGithub } from "react-icons/si"
 
 const data = [
   {
     id: 1,
-    icon: <FaFacebookSquare className="social-icon"></FaFacebookSquare>,
-    url: "https://www.twitter.com",
+    icon: <FaLinkedin className="social-icon"></FaLinkedin>,
+    url: "https://www.linkedin.com/in/qianweiyin/",
   },
   {
     id: 2,
-    icon: <FaLinkedin className="social-icon"></FaLinkedin>,
-    url: "https://www.twitter.com",
+    icon: <SiGithub className="social-icon"></SiGithub>,
+    url: "https://github.com/qianwei-yin",
   },
   {
     id: 3,
-    icon: <FaDribbbleSquare className="social-icon"></FaDribbbleSquare>,
-    url: "https://www.twitter.com",
+    icon: <SiLeetcode className="social-icon"></SiLeetcode>,
+    url: "https://leetcode.com/conway22/",
   },
   {
     id: 4,
-    icon: <FaBehanceSquare className="social-icon"></FaBehanceSquare>,
-    url: "https://www.twitter.com",
-  },
-  {
-    id: 5,
-    icon: <FaTwitterSquare className="social-icon"></FaTwitterSquare>,
-    url: "https://www.twitter.com",
+    icon: <FaSpotify className="social-icon"></FaSpotify>,
+    url: "https://open.spotify.com/user/315mdpszp5q5zjrkd5k2tal6gzku",
   },
 ]
 
