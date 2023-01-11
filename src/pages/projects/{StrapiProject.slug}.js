@@ -1,27 +1,100 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../../components/Seo"
 
-const ProjectTemplate = ({ pageContext: { slug }, data }) => {
+const ProjectTemplate = ({ data }) => {
+  const { strapiProject: info } = data
+  console.log(info)
+
   return (
     <>
-      <Seo
-        title={data.strapiProject.title.toUpperCase()}
-        description={data.strapiProject.description}
-        image={data.strapiProject.image.localFile.publicURL}
-      />
-      <main className="project-template-page">
-        <h2>{data.strapiProject.title}</h2>
-        <p>{data.strapiProject.description}</p>
-      </main>
+      <Seo title={info.title} image={info.image.localFile.publicURL} />
+      <section className="project-detail-page">
+        <main className="section-center project-template-page">
+          <h1>{info.title}</h1>
+
+          <div className="underline"></div>
+
+          <div className="project-stack stack">
+            {info.stack.map(item => {
+              return <span key={item.id}>{item.title}</span>
+            })}
+          </div>
+
+          <GatsbyImage
+            image={getImage(info.image.localFile)}
+            // className="project-img"
+            alt={info.slug}
+          />
+
+          <h2>1. A brief Introduction</h2>
+
+          {info.desc.para.map((p, index) => {
+            return <p key={index}>{p.value}</p>
+          })}
+
+          <p>
+            Now go to{" "}
+            <a href={info.url} target="_blank" rel="noreferrer">
+              {info.title.toUpperCase()}
+            </a>{" "}
+            to take your journey!
+          </p>
+
+          {info.resources.length > 0 && (
+            <>
+              <h2>2. Technology Stack and Resources</h2>
+
+              {info.resources.map((reso, index) => {
+                const {
+                  title,
+                  desc: { para },
+                } = reso
+
+                const [content] = para
+
+                return (
+                  <div key={index}>
+                    <h4>{title}</h4>
+                    <p>{content.value}</p>
+                  </div>
+                )
+              })}
+            </>
+          )}
+        </main>
+      </section>
     </>
   )
 }
 
 export const query = graphql`
-  query($slug: String) {
+  query MyQuery($slug: String) {
     strapiProject(slug: { eq: $slug }) {
-      description
+      desc {
+        para {
+          value
+        }
+      }
+      github
+      id
+      resources {
+        desc {
+          para {
+            value
+          }
+        }
+        title
+      }
+      slug
+      stack {
+        id
+        title
+      }
+      title
+      type
+      url
       image {
         localFile {
           childImageSharp {
@@ -30,9 +103,6 @@ export const query = graphql`
           publicURL
         }
       }
-      title
-      url
-      github
     }
   }
 `

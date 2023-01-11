@@ -1,14 +1,21 @@
 import React from "react"
 import Seo from "../components/Seo"
+import { useForm } from "@formspree/react"
 
-const contact = () => {
+const Contact = () => {
+  const [state, handleSubmit] = useForm("mgebeqdy")
+
   return (
     <>
       <Seo title="Contact" />
       <section className="contact-page">
         <article className="contact-form">
-          <h3>get in touch with me!</h3>
-          <form>
+          <h3>
+            {state.succeeded
+              ? "Thanks for contacting!"
+              : "get in touch with me!"}
+          </h3>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <input
                 type="text"
@@ -29,7 +36,11 @@ const contact = () => {
                 className="form-control"
               />
             </div>
-            <button type="button" className="submit-btn btn">
+            <button
+              type="submit"
+              className="submit-btn btn"
+              disabled={state.submitting}
+            >
               submit here
             </button>
           </form>
@@ -39,4 +50,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact

@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import Title from "./Title"
 import { FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
 
 const Jobs = () => {
   const data = useStaticQuery(query)
@@ -31,7 +30,7 @@ const Jobs = () => {
         {/* job info */}
         <article className="job-info">
           <h3>{position}</h3>
-          <a href={url} target="_blank">
+          <a href={url} target="_blank" rel="noreferrer">
             <h4>{company}</h4>
           </a>
           <p className="job-date">{date}</p>

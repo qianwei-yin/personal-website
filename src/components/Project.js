@@ -5,7 +5,7 @@ import { MdWeb } from "react-icons/md"
 import { Link } from "gatsby"
 
 const Project = ({
-  description,
+  desc: { para },
   title,
   github,
   stack,
@@ -22,21 +22,30 @@ const Project = ({
         alt={title}
       />
       <div className="project-info">
-        <span className="project-number">0{index + 1}.</span>
+        <span className="project-number">{("0" + (index + 1)).slice(-2)}.</span>
         <Link to={`/projects/${slug}`} className="project-slug">
-          <h3>{title}</h3>
+          <h3>
+            {title} <span>(click me!)</span>
+          </h3>
         </Link>
-        <p className="project-desc">{description}</p>
+        {para.map((p, index) => {
+          return (
+            <p key={index} className="project-desc">
+              {p.value}
+            </p>
+          )
+        })}
+
         <div className="project-stack">
-          {stack.map(item => {
-            return <span key={item.id}>{item.title}</span>
+          {stack.map((item, index) => {
+            return <span key={index}>{item.title}</span>
           })}
         </div>
         <div>
-          <a href={github} target="_blank">
+          <a href={github} target="_blank" rel="noreferrer">
             <FaGithubSquare className="project-icon" />
           </a>
-          <a href={url} target="_blank">
+          <a href={url} target="_blank" rel="noreferrer">
             <MdWeb className="project-icon" />
           </a>
         </div>

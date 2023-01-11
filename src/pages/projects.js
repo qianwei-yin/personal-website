@@ -1,17 +1,15 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Projects from "../components/Projects"
 import Seo from "../components/Seo"
+import { graphql } from "gatsby"
 
 const ProjectsPage = ({ data }) => {
-  const projects = data.allStrapiProject.nodes
-
   return (
     <>
       <Seo title="Projects" />
       <main>
         <section className="projects-page">
-          <Projects title="all projects" projects={projects} />
+          <Projects title="all projects" data={data} />
         </section>
       </main>
     </>
@@ -19,18 +17,20 @@ const ProjectsPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query {
-    allStrapiProject {
+  query GetProjects {
+    allStrapiProject(sort: { order: DESC }) {
       nodes {
-        description
-        featured
+        desc {
+          para {
+            value
+          }
+        }
         github
         id
         slug
         title
         url
         stack {
-          id
           title
         }
         image {
@@ -40,6 +40,7 @@ export const query = graphql`
             }
           }
         }
+        type
       }
     }
   }
