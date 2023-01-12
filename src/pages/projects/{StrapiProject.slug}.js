@@ -47,17 +47,14 @@ const ProjectTemplate = ({ data }) => {
               <h2>2. Technology Stack and Resources</h2>
 
               {info.resources.map((reso, index) => {
-                const {
-                  title,
-                  desc: { para },
-                } = reso
-
-                const [content] = para
+                const { title, desc } = reso
 
                 return (
                   <div key={index}>
                     <h4>{title}</h4>
-                    <p>{content.value}</p>
+                    {desc.para.map((p, ind) => {
+                      return <p key={ind}>{p.value}</p>
+                    })}
                   </div>
                 )
               })}
