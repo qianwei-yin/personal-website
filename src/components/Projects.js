@@ -1,8 +1,9 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import Title from "./Title"
 import Project from "./Project"
 
-const Projects = ({ title, data }) => {
+const Projects = ({ title, data, showMore }) => {
   const projects = data.allStrapiProject.nodes
 
   const [type, setType] = useState("Large-Scale")
@@ -49,6 +50,12 @@ const Projects = ({ title, data }) => {
             return <Project key={pro.id} index={index} {...pro} />
           })}
       </div>
+
+      {showMore && (
+        <Link to="/projects" className="btn center-btn">
+          show more
+        </Link>
+      )}
     </section>
   )
 }

@@ -1,7 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { FaGithubSquare } from "react-icons/fa"
-import { MdWeb } from "react-icons/md"
+import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
 import { Link } from "gatsby"
 
 const Project = ({
@@ -25,7 +24,7 @@ const Project = ({
         <span className="project-number">{("0" + (index + 1)).slice(-2)}.</span>
         <Link to={`/projects/${slug}`} className="project-slug">
           <h3>
-            {title} <span>(click me!)</span>
+            {title} <span>(show details)</span>
           </h3>
         </Link>
         {para.map((p, index) => {
@@ -46,7 +45,7 @@ const Project = ({
             <FaGithubSquare className="project-icon" />
           </a>
           <a href={url} target="_blank" rel="noreferrer">
-            <MdWeb className="project-icon" />
+            <FaShareSquare className="project-icon" />
           </a>
         </div>
       </div>

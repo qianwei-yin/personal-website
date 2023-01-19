@@ -39,7 +39,7 @@ const ProjectTemplate = ({ data }) => {
             <a href={info.url} target="_blank" rel="noreferrer">
               {info.title.toUpperCase()}
             </a>{" "}
-            to take your journey!
+            and enjoy your journey!
           </p>
 
           {info.resources.length > 0 && (

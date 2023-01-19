@@ -3,7 +3,7 @@
 Fonts
 ===============
 */
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Sono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Sono:wght@400;500;600;700&display=swap");
 
 /*
 =============== 
@@ -518,11 +518,14 @@ Keywords
   padding: 3rem 1.5rem;
   margin-bottom: 2rem;
   border-radius: var(--radius);
-  text-align: center;
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
+.keyword h4 {
+  text-align: center;
+}
 .keyword-icon {
+  text-align: center;
   font-size: 2rem;
 }
 .keyword .underline {
@@ -579,6 +582,7 @@ Jobs
   margin-bottom: 4rem;
 }
 .job-btn {
+  font-family: inherit;
   background: transparent;
   border-color: transparent;
   text-transform: capitalize;
@@ -597,9 +601,6 @@ Jobs
 .active-btn {
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5);
-}
-.job-info {
-  /* min-height: 420px; */
 }
 .job-info h3 {
   font-weight: 400;
@@ -675,7 +676,7 @@ Projects
 }
 .type-center .active {
   background: var(--clr-primary-2);
-  color: var(--clr-grey-10);
+  color: var(--clr-white);
 }
 .project-img {
   border-top-left-radius: var(--radius);
@@ -911,25 +912,26 @@ About Page
 .about-page {
   padding: 7rem 4rem;
 }
+.about-stack {
+  margin-bottom: 3rem;
+}
 .about-me {
   display: grid;
   justify-items: center;
   margin-top: 3rem;
 }
 .about-me h5 {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 .image-container {
+  padding: 0;
   display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+
+  margin-bottom: 3rem;
 }
-.about-img {
-  margin-bottom: 2rem;
-  height: 25rem;
-  width: auto;
-}
-.about-img-photo {
-  margin-bottom: 2rem;
-}
+
 .about-img-svg {
   margin-bottom: 2rem;
   height: 25rem;
@@ -971,16 +973,25 @@ About Page
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
-    column-gap: 4rem;
-  }
-  .image-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
   }
-  .image-container .photo {
-    display: grid;
+  .image-container {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+
+    padding: 0 4rem;
   }
+  .image-container.photo {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6rem;
+  }
+  .photo .about-img {
+    width: 70%;
+  }
+  .photo .about-img:nth-child(odd) {
+    justify-self: end;
+  }
+
   .about-img-svg {
     grid-column: 1 / span 5;
     margin-bottom: 0;

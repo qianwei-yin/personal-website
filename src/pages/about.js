@@ -21,7 +21,7 @@ const About = ({ data }) => {
           <article className="about-text">
             <Title title={title} />
             {info.para.map((p, index) => {
-              return <p>{p.value}</p>
+              return <p key={index}>{p.value}</p>
             })}
             <div className="about-stack">
               {stack.map(item => {
@@ -81,7 +81,7 @@ const About = ({ data }) => {
                     key={index}
                     image={item.localFile.childImageSharp.gatsbyImageData}
                     alt={item.name}
-                    className="about-img-photo"
+                    className="about-img"
                   />
                 )
               })}
