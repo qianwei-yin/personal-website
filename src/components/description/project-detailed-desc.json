@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_description_project_detailed_descs",
+  "info": {
+    "displayName": "Project_resources_desc",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "json"
+    }
+  }
+}

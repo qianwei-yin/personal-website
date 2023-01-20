@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "github": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "stack": {
+      "type": "component",
+      "repeatable": true,
+      "component": "description.stack-item"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Large-Scale",
+        "Functionality",
+        "Front-End"
+      ],
+      "default": "Functionality",
+      "required": true
+    },
+    "resources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "description.project-detailed-desc"
+    },
+    "desc": {
+      "type": "json"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}
