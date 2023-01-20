@@ -3,8 +3,7 @@
 Fonts
 ===============
 */
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Sono:wght@400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Sono:wght@400;500;600;700&display=swap");
 /*
 =============== 
 Variables
@@ -41,7 +40,7 @@ Variables
   --clr-white: #fff;
 
   --ff-primary: "Sono", sans-serif;
-  --ff-secondary: "Karla", sans-serif;
+  --ff-secondary: "Lora", sans-serif;
 
   --transition: all 0.3s linear;
   --spacing: 0.2rem;
@@ -105,6 +104,9 @@ h4 {
 p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-3);
+}
+button {
+  font-family: inherit;
 }
 @media screen and (min-width: 800px) {
   h1 {
