@@ -69,4 +69,4 @@ yarn-error.log
 .yarn-integrity
 
 # images
-src/assets/pictures-photos/
+src/assets/images/
