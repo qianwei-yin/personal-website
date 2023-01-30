@@ -1,0 +1,73 @@
+{
+<<<<<<< HEAD
+  "name": "gatsby-starter-hello-world",
+  "private": true,
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@formspree/react": "^2.4.1",
+    "gatsby": "^5.3.3",
+    "gatsby-plugin-image": "^3.3.2",
+    "gatsby-plugin-react-helmet": "^6.3.0",
+    "gatsby-plugin-sharp": "^5.3.2",
+    "gatsby-source-filesystem": "^5.3.1",
+    "gatsby-source-strapi": "^3.0.4",
+    "gatsby-transformer-sharp": "^5.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.7.1",
+    "slugify": "^1.6.5",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+=======
+  "name": "personal-website-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/strapi": "4.5.5",
+    "@strapi/plugin-users-permissions": "4.5.5",
+    "@strapi/plugin-i18n": "4.5.5",
+    "better-sqlite3": "7.4.6"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "26ddcfbb-1c12-4943-94cd-02e2bcfc0258"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+>>>>>>> repo-backend/main
+}
